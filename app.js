@@ -55,3 +55,10 @@ formulario.addEventListener("submit", (e) => {
   addTodo(todo);
   createTodos();
 });
+
+document.addEventListener("DOMContentLoaded", (e) => {
+  if (localStorage.getItem("todos")) {
+    todos = JSON.parse(localStorage.getItem("todos"));
+    createTodos();
+  }
+});
